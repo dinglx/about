@@ -3,6 +3,7 @@
 
 import os
 import django
+
 # calculated paths for django and the site
 # used as starting points for various other paths
 DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
@@ -24,7 +25,21 @@ USE_I18N = False
 USE_L10N = False
 USE_TZ = True
 
-MEDIA_ROOT = os.path.join(SITE_ROOT, 'static')
+MEDIA_ROOT = '/home/dotcloud/data/media/'
+MEDIA_URL = '/media/'
+
+STATIC_ROOT = '/home/dotcloud/volatile/static/'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(SITE_ROOT, 'static/'),
+)
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
 
 SECRET_KEY = '5c^pml#7e3d$zor%*_7y098(l0i=d3$+y_((11-_j0&amp;f9rw9%)'
 
@@ -43,7 +58,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'syte.urls'
 
-WSGI_APPLICATION = 'syte.wsgi.application'
+#WSGI_APPLICATION = 'syte.wsgi.application'
 
 TEMPLATE_DIRS = (
     os.path.join(SITE_ROOT, 'templates')
@@ -62,6 +77,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
+#    'django.contrib.auth',
+#    'django.contrib.admin',
     'gunicorn',
 )
 

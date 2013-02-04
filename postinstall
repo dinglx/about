@@ -1,0 +1,4 @@
+#!/bin/sh
+#python mkadmin.py
+mkdir -p /home/dotcloud/data/media /home/dotcloud/volatile/static
+python syte/manage.py collectstatic --noinput

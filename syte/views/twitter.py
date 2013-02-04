@@ -7,6 +7,8 @@ from rauth.service import OAuth1Service
 
 
 def twitter(request, username):
+    import requests
+    requests.session(hooks={'pre_request': '111'})
     twitter = OAuth1Service(
         name='twitter',
         consumer_key=settings.TWITTER_CONSUMER_KEY,

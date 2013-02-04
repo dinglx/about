@@ -19,10 +19,13 @@ def github(request, username):
         username,
         settings.GITHUB_ACCESS_TOKEN))
 
+    repos_r.status_code
+
     context = {'user': user_r.json}
     context.update({'repos': repos_r.json})
 
-    context['repos'].sort(key=itemgetter('updated_at'), reverse=True)
+    if repos_r.status_code == 200:
+        context['repos'].sort(key=itemgetter('updated_at'), reverse=True)
 
     return HttpResponse(content=json.dumps(context),
                         status=repos_r.status_code,
