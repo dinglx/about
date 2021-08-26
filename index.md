@@ -1,8 +1,8 @@
 ## Welcome to GitHub Pages
 
-[TEST](https://dinglx.github.com/dinglx/test)
+[TEST](https://dinglx.github.io/about/test)
 
-[TEST](/dinglx/test)
+[TEST](/about/test)
 
 You can use the [editor on GitHub](https://github.com/dinglx/about/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
